@@ -6,7 +6,6 @@ An `abstract` class is an "incomplete" class. It has `abstract` methods--incompl
 
 Suggested steps to complete this assignment
 -------------------------------------------
-
 1. Fork [this repository](https://github.com/APCSLowell/AsteroidsGame). 
 1. Open the program by opening `AsteroidsGame.pde` in Processing or opening the AsteroidsGame folder in Sublime.
 2. Uncomment the `extends floater` on Line 1 of `Spaceship.pde`
