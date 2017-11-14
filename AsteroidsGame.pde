@@ -27,11 +27,11 @@ public void keyPressed()
 		
 	if (key == 'w')//up
 	{
-		zoom.accelerate(0.1);
+		zoom.accelerate(0.5);
 	}
 	if (key == 's')//down
 	{
-		zoom.accelerate(-0.1);
+		zoom.accelerate(-0.5);
 	}
 }
 
