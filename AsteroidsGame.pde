@@ -30,11 +30,15 @@ public void keyPressed()
 		
 	if (key == 'w')//up
 	{
+<<<<<<< HEAD
 		zoom.accelerate(0.3);
+=======
+		zoom.accelerate(0.5);
+>>>>>>> b3dd4b4804a9cd1e653ac5081157ec1ba6469daf
 	}
 	if (key == 's')//down
 	{
-		zoom.accelerate(-0.1);
+		zoom.accelerate(-0.5);
 	}
 	if (key == '0')
 	{
