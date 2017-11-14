@@ -1,3 +1,6 @@
+public int midX = 500;
+public int midY = 500; 
+
 Spaceship zoom = new Spaceship();
 public void setup() 
 {
@@ -27,11 +30,18 @@ public void keyPressed()
 		
 	if (key == 'w')//up
 	{
-		zoom.accelerate(0.1);
+		zoom.accelerate(0.3);
 	}
 	if (key == 's')//down
 	{
 		zoom.accelerate(-0.1);
+	}
+	if (key == '0')
+	{
+		zoom.setX((int)(Math.random()*960)+20);
+		zoom.setY((int)(Math.random()*960)+20);
+		zoom.setDirectionX(0);
+		zoom.setDirectionY(0);
 	}
 }
 

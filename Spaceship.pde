@@ -7,8 +7,8 @@ class Spaceship extends Floater
   xCorners = xS;
   yCorners = yS;
   myColor = color(180,180,230);
-  myCenterX=250;
-  myCenterY=250; //holds center coordinates   
+  myCenterX=midX;
+  myCenterY=midY; //holds center coordinates   
   myDirectionX = 0;
   myDirectionY = 0; //holds x and y coordinates of the vector for direction of travel   
   myPointDirection = 0;
@@ -23,5 +23,10 @@ class Spaceship extends Floater
   public double getDirectionY(){return myDirectionY;}
   public void setPointDirection(int degrees){myPointDirection = degrees;}  
   public double getPointDirection(){return myPointDirection;}
+  public void drawDetails()
+  {
+    fill(255);
+    rect(getX()+1,getX()-1,5,5);
+  }
 }
 

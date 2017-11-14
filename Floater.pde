@@ -20,12 +20,16 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
 
   //Accelerates the floater in the direction it is pointing (myPointDirection)   
   public void accelerate (double dAmount)   
-  {          
-    //convert the current direction the floater is pointing to radians    
-    double dRadians =myPointDirection*(Math.PI/180);      
-    //change coordinates of direction of travel    
-    myDirectionX += ((dAmount) * Math.cos(dRadians));    
-    myDirectionY += ((dAmount) * Math.sin(dRadians));       
+  {    
+
+    if (myDirectionX < 12 && myDirectionY < 12)
+    {      
+      //convert the current direction the floater is pointing to radians    
+      double dRadians =myPointDirection*(Math.PI/180);      
+      //change coordinates of direction of travel    
+      myDirectionX += ((dAmount) * Math.cos(dRadians));    
+      myDirectionY += ((dAmount) * Math.sin(dRadians)); 
+    }      
   }   
   public void turn (int nDegreesOfRotation)   
   {     
