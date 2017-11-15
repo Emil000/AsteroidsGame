@@ -14,7 +14,7 @@ class Stars
 
 	public void show()
 	{
-		System.out.println("drawing stars");
+		//System.out.println("drawing stars");
 		fill(myColor);
 		ellipse(myX,myY,size,size);
 	}

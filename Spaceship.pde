@@ -46,20 +46,21 @@ class Spaceship extends Floater
     }
     endShape(CLOSE);
 
-    //"unrotate" and "untranslate" in reverse order
-    rotate(-1*dRadians);
-    translate(-1*(float)myCenterX, -1*(float)myCenterY);
-
-    fill(0);
-    rect((int)myCenterX+4,(int)myCenterY-4,4,8);
-
-
+    noStroke();
+    fill(128);
+    rect(-10,-4,4,9);
 
     if (key=='w') //flame
     {
-      fill(200,30,30);
-      triangle((float)myCenterX-20, (float)myCenterY-3, (float)myCenterX-20, (float)myCenterY+3, (float)myCenterX-25, (float)myCenterY);
+      noStroke();
+      fill(255,140,0);
+      triangle(-19,-4,-19,4,-28,0);
     }
+
+    //"unrotate" and "untranslate" in reverse order
+    rotate(-1*dRadians);
+    translate(-1*(float)myCenterX, -1*(float)myCenterY);
+    
   }  
 
 } 
