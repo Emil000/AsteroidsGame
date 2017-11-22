@@ -3,15 +3,15 @@ class Spaceship extends Floater
   public Spaceship() 
   {
   corners = 21;
-  int [] xS= {10,-11,-11,-15,-15,-11,-11,-15,-15,-11,-11,-15,-15,-11,-11,10,11,17,17,11,10};
-  int [] yS= {4, 4, 6,  6,  4,  4,  1,  1, -1, -1,  -4, -4 , -6,-6,-4, -4, -1,-1, 1,1,4};
+  int [] xS= {10,-15,-15,-19,-19,-15,-15,-19,-19,-15,-15,-19,-19,-15,-15,12,14,18,18,14,12};
+  int [] yS= {4, 4, 6,  6,  4,  4,  1,  1, -1, -1,  -4, -4 , -6,-6,-4, -4, -3, -1, 1, 3,4 };
   xCorners = xS;
   yCorners = yS;
-  myColor = color(180,180,230);
+  myColor = color(188,0,0);
   myCenterX=midX;
   myCenterY=midY; //holds center coordinates   
   myDirectionX = 0;
-  myDirectionY = 0; //holds x and y coordinates of the vector for direction of travel   
+  myDirectionY = 0;//holds x and y coordinates of the vector for direction of travel   
   myPointDirection = 0;
   } //holds current direction the ship is pointing in degrees    
   public void setX(int x){myCenterX=x;} 
@@ -26,8 +26,9 @@ class Spaceship extends Floater
   public double getPointDirection(){return myPointDirection;}
   public void show ()  //Draws the floater at the current position  
   {             
-    fill(myColor);   
-    stroke(myColor);    
+    fill(myColor);
+    stroke(myColor); 
+    
     
     //translate the (x,y) center of the ship to the correct position
     translate((float)myCenterX, (float)myCenterY);
@@ -47,14 +48,19 @@ class Spaceship extends Floater
     endShape(CLOSE);
 
     noStroke();
-    fill(128);
-    rect(-10,-4,4,9);
+    fill(255);
+    quad(-13,-4,-11,-14,-6,-14,-4,-4);
+    quad(-13,5,-11,15,-6,15,-4,5);
+    rect(-8, 13 , 15,2);
+    rect(-8,-14 , 15,2);
+    rect(0,-2,8,4);
 
     if (key=='w') //flame
     {
       noStroke();
       fill(255,140,0);
-      triangle(-19,-4,-19,4,-28,0);
+      ellipse(-21,0,5,5);
+      triangle(-21,-4,-19,4,-28,0);
     }
 
     //"unrotate" and "untranslate" in reverse order

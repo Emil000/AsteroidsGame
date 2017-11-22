@@ -39,20 +39,20 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     myCenterY += myDirectionY;     
 
     //wrap around screen    
-    if(myCenterX >width)
+    if(myCenterX >width+30)
     {     
-      myCenterX = 0;    
+      myCenterX = -20;    
     }    
-    else if (myCenterX<0)
+    else if (myCenterX< -30)
     {     
-      myCenterX = width;    
+      myCenterX = width+10;    
     }    
-    if(myCenterY >height)
+    if(myCenterY >height+20)
     {    
-      myCenterY = 0;    
+      myCenterY = -10;    
     } 
     
-    else if (myCenterY < 0)
+    else if (myCenterY < -10)
     {     
       myCenterY = height;    
     }   
@@ -60,7 +60,8 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
   public void show ()  //Draws the floater at the current position  
   {             
     fill(myColor);   
-    stroke(myColor);    
+    stroke(0);
+
     
     //translate the (x,y) center of the ship to the correct position
     translate((float)myCenterX, (float)myCenterY);
