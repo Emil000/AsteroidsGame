@@ -3,7 +3,7 @@ public int midY = 350;
 
 Stars[] stars= new Stars[150];
 Spaceship zoom = new Spaceship();
-Asteroid[] aBunch = new Asteroid[20];
+ArrayList <Asteroid> Asteroids = new ArrayList<Asteroid>(); //make array list
 
 public void setup() 
 {
@@ -14,9 +14,10 @@ public void setup()
   {
   	stars[i] = new Stars();
   }
-  for (int i =0; i<aBunch.length; i++)
+
+  for (int i =0; i < 20; i++)
   {
-  	aBunch[i] = new Asteroid();
+  	asteroids.add(new Asteroid());
   }
 }
 
@@ -39,6 +40,12 @@ public void draw()
 	
 	zoom.show();
 	zoom.move();
+
+	fill(255);
+	rect(10,10,150,15);
+	rect(10,30,150,15);
+	fill(0,200,0);
+	rect(11,11,140,13);
 	
 }
 

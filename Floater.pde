@@ -39,7 +39,7 @@ abstract class Floater //Do NOT modify the Floater class! Make changes in the Sp
     myCenterY += myDirectionY;     
 
     //wrap around screen    
-    if(myCenterX >width+30)
+    if(myCenterX > width+30)
     {     
       myCenterX = -20;    
     }    
