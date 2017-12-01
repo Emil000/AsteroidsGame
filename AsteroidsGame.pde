@@ -3,7 +3,7 @@ public int midY = 350;
 
 Stars[] stars= new Stars[150];
 Spaceship zoom = new Spaceship();
-ArrayList <Asteroid> Asteroids = new ArrayList<Asteroid>(); //make array list
+ArrayList <Asteroid> asteroids = new ArrayList<Asteroid>(); //make array list
 
 public void setup() 
 {
@@ -15,10 +15,11 @@ public void setup()
   	stars[i] = new Stars();
   }
 
-  for (int i =0; i < 20; i++)
+  for (int i = 0; i < 20; i++)
   {
   	asteroids.add(new Asteroid());
   }
+
 }
 
 public void draw() 
@@ -31,11 +32,13 @@ public void draw()
 		stars[i].show();
 	}
 
-	for (int i = 0; i < aBunch.length; i++) 
+	for (int i = 0; i < asteroids.size(); i++) 
 	{
-		aBunch[i].show();
-		aBunch[i].move();
-		aBunch[i].turn((int)(Math.random()*5)-3);
+		asteroids.get(i).show();
+		asteroids.get(i).move();
+		//if (dist(zoom.getX(),zoom.getY(),asteroid.get(i).getX(), asteroids.get(i).getY() ) <10)
+			
+
 	}
 	
 	zoom.show();
