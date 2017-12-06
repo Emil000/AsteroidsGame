@@ -36,8 +36,11 @@ public void draw()
 	{
 		asteroids.get(i).show();
 		asteroids.get(i).move();
-		//if (dist(zoom.getX(),zoom.getY(),asteroid.get(i).getX(), asteroids.get(i).getY() ) <10)
-			
+		if (dist(zoom.getX(),zoom.getY(),asteroids.get(i).getX(), asteroids.get(i).getY() ) < 40)
+		{
+			asteroids.remove(i);
+
+		}
 
 	}
 	
@@ -49,6 +52,8 @@ public void draw()
 	rect(10,30,150,15);
 	fill(0,200,0);
 	rect(11,11,140,13);
+	
+		
 	
 }
 
