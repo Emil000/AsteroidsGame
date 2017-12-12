@@ -3,7 +3,10 @@ public int midY = 350;
 
 Stars[] stars= new Stars[150];
 Spaceship zoom = new Spaceship();
+Bullet oneBullet = new Bullet(zoom);
+
 ArrayList <Asteroid> asteroids = new ArrayList<Asteroid>(); //make array list
+ArrayList <Bullet> pewpew = new ArrayList<Bullet>();
 
 public void setup() 
 {
@@ -18,6 +21,10 @@ public void setup()
   for (int i = 0; i < 20; i++)
   {
   	asteroids.add(new Asteroid());
+  }
+  for (int i =0; i < 30; i++)
+  {
+  	pewpew.add(new Bullet(zoom));
   }
 
 }
@@ -46,12 +53,17 @@ public void draw()
 	
 	zoom.show();
 	zoom.move();
+	oneBullet.show();
+	//oneBullet.move();
 
+
+
+	//"health bar"
 	fill(255);
 	rect(10,10,150,15);
 	rect(10,30,150,15);
 	fill(0,200,0);
-	rect(11,11,140,13);
+	rect(12,12,140,11);
 	
 		
 	
@@ -90,4 +102,3 @@ public void keyPressed()
 		zoom.setDirectionY(0);
 	}
 }
-

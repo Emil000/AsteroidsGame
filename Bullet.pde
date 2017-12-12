@@ -1,19 +1,20 @@
 class Bullet extends Floater
 {
-public Bullet() 
+  public Bullet(Spaceship theShip) 
   {
   corners = 8;
   int [] xS= {0,2,3,2,0,-2,-3,-2};
   int [] yS= {3,2,0,-2,-3,-2,0,2};
   xCorners = xS;
   yCorners = yS;
-  myColor = color(255);
-  myCenterX=midX;
-  myCenterY=midY; //holds center coordinates   
-  myDirectionX = 0;
-  myDirectionY = 0;//holds x and y coordinates of the vector for direction of travel   
-  myPointDirection = 0;
-  } //holds current direction the ship is pointing in degrees    
+  myColor = color(255,0,0);
+  myCenterX=theShip.getX();
+  myCenterY=theShip.getY();
+  double dRadians =myPointDirection*(Math.PI/180);
+  myDirectionX = 5 * Math.cos(dRadians) + theShip.getDirectionX();
+  myDirectionY = 5 * Math.sin(dRadians) + theShip.getDirectionY();
+  myPointDirection = theShip.getPointDirection();
+  }
   public void setX(int x){myCenterX=x;} 
   public int getX(){return (int)myCenterX;} 
   public void setY(int y){myCenterY=y;}  
@@ -23,6 +24,5 @@ public Bullet()
   public void setDirectionY(double y){myDirectionY = y;}
   public double getDirectionY(){return myDirectionY;}
   public void setPointDirection(int degrees){myPointDirection = degrees;}  
-  public double getPointDirection(){return myPointDirection;}
-            
+  public double getPointDirection(){return myPointDirection;}     
 }
