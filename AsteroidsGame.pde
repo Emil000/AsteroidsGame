@@ -3,7 +3,6 @@ public int midY = 350;
 
 Stars[] stars= new Stars[150];
 Spaceship zoom = new Spaceship();
-Bullet oneBullet = new Bullet(zoom);
 
 ArrayList <Asteroid> asteroids = new ArrayList<Asteroid>(); //make array list
 ArrayList <Bullet> pewpew = new ArrayList<Bullet>();
@@ -22,10 +21,8 @@ public void setup()
   {
   	asteroids.add(new Asteroid());
   }
-  for (int i =0; i < 30; i++)
-  {
-  	pewpew.add(new Bullet(zoom));
-  }
+
+  
 
 }
 
@@ -37,6 +34,12 @@ public void draw()
 	for (int i = 0; i < stars.length; i++)
 	{
 		stars[i].show();
+	}
+
+	for (int i = 0; i < pewpew.size(); i++)
+	{
+		pewpew.get(i).show();
+		pewpew.get(i).move();
 	}
 
 	for (int i = 0; i < asteroids.size(); i++) 
@@ -53,7 +56,6 @@ public void draw()
 	
 	zoom.show();
 	zoom.move();
-	oneBullet.show();
 	//oneBullet.move();
 
 
@@ -100,5 +102,9 @@ public void keyPressed()
 		zoom.setPointDirection((int)(Math.random()*360));
 		zoom.setDirectionX(0);
 		zoom.setDirectionY(0);
+	}
+	if (key == ' ')
+	{
+		pewpew.add(new Bullet(zoom));
 	}
 }

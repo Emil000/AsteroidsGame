@@ -59,7 +59,7 @@ class Spaceship extends Floater
     {
       noStroke();
       fill(255,140,0);
-      ellipse(-21,0,5,5);
+      ellipse(-21,-1,5,5);
       triangle(-21,-4,-19,4,-28,0);
     }
 
